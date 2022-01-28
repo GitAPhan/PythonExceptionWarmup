@@ -20,8 +20,18 @@ for i in range(len(choices.options)):
 
 # Show the user options until the user decides to choose the exit option
 while(True):
-    # Ask for the user input, assume it's an integer
-    user_input = int(
-        input("Please select the number you would like to choose: "))
-    # Call the run_choice function with the users choice - 1 (because arrays count from 0)
-    run_choice(user_input - 1)
+    # This is to catch any user input errors
+    try:
+        # Ask for the user input, assume it's an integer
+        user_input = int(input("Please select the number you would like to choose: "))
+
+        # Call the run_choice function with the users choice - 1 (because arrays count from 0)
+        run_choice(user_input - 1)
+    except ValueError:
+        print('Please enter a valid choice')
+    except NameError:
+        print('is it that hard to key in one number?')
+    except IndexError:
+        print('Please make a selection from the available choices')
+    except Exception as e:
+        print(e)
