@@ -29,8 +29,6 @@ while(True):
         run_choice(user_input - 1)
     except ValueError:
         print('Please enter a valid choice')
-    except NameError:
-        print('is it that hard to key in one number?')
     except IndexError:
         print('Please make a selection from the available choices')
     except Exception as e:
